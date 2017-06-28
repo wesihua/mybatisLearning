@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wei.manager.mapper.Model7Mapper" >
+  <resultMap id="BaseResultMap" type="com.wei.manager.bean.Model7" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="name2" property="name2" jdbcType="VARCHAR" />
+    <result column="name3" property="name3" jdbcType="VARCHAR" />
+    <result column="name4" property="name4" jdbcType="VARCHAR" />
+    <result column="name5" property="name5" jdbcType="VARCHAR" />
+    <result column="name6" property="name6" jdbcType="VARCHAR" />
+    <result column="name7" property="name7" jdbcType="VARCHAR" />
+    <result column="name8" property="name8" jdbcType="VARCHAR" />
+    <result column="name9" property="name9" jdbcType="TIMESTAMP" />
+    <result column="name10" property="name10" jdbcType="VARCHAR" />
+    <result column="model1_id" property="model1Id" jdbcType="INTEGER" />
+    <result column="model2_id" property="model2Id" jdbcType="INTEGER" />
+    <result column="model3_id" property="model3Id" jdbcType="INTEGER" />
+    <result column="model4_id" property="model4Id" jdbcType="INTEGER" />
+    <result column="model5_id" property="model5Id" jdbcType="INTEGER" />
+    <result column="model6_id" property="model6Id" jdbcType="INTEGER" />
+    <result column="model8_id" property="model8Id" jdbcType="INTEGER" />
+    <result column="model9_id" property="model9Id" jdbcType="INTEGER" />
+    <result column="model10_id" property="model10Id" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, name2, name3, name4, name5, name6, name7, name8, name9, name10, model1_id, 
+    model2_id, model3_id, model4_id, model5_id, model6_id, model8_id, model9_id, model10_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from model7
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from model7
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wei.manager.bean.Model7" >
+    insert into model7 (id, name, name2, 
+      name3, name4, name5, 
+      name6, name7, name8, 
+      name9, name10, model1_id, 
+      model2_id, model3_id, model4_id, 
+      model5_id, model6_id, model8_id, 
+      model9_id, model10_id)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{name2,jdbcType=VARCHAR}, 
+      #{name3,jdbcType=VARCHAR}, #{name4,jdbcType=VARCHAR}, #{name5,jdbcType=VARCHAR}, 
+      #{name6,jdbcType=VARCHAR}, #{name7,jdbcType=VARCHAR}, #{name8,jdbcType=VARCHAR}, 
+      #{name9,jdbcType=TIMESTAMP}, #{name10,jdbcType=VARCHAR}, #{model1Id,jdbcType=INTEGER}, 
+      #{model2Id,jdbcType=INTEGER}, #{model3Id,jdbcType=INTEGER}, #{model4Id,jdbcType=INTEGER}, 
+      #{model5Id,jdbcType=INTEGER}, #{model6Id,jdbcType=INTEGER}, #{model8Id,jdbcType=INTEGER}, 
+      #{model9Id,jdbcType=INTEGER}, #{model10Id,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wei.manager.bean.Model7" >
+    insert into model7
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="name2 != null" >
+        name2,
+      </if>
+      <if test="name3 != null" >
+        name3,
+      </if>
+      <if test="name4 != null" >
+        name4,
+      </if>
+      <if test="name5 != null" >
+        name5,
+      </if>
+      <if test="name6 != null" >
+        name6,
+      </if>
+      <if test="name7 != null" >
+        name7,
+      </if>
+      <if test="name8 != null" >
+        name8,
+      </if>
+      <if test="name9 != null" >
+        name9,
+      </if>
+      <if test="name10 != null" >
+        name10,
+      </if>
+      <if test="model1Id != null" >
+        model1_id,
+      </if>
+      <if test="model2Id != null" >
+        model2_id,
+      </if>
+      <if test="model3Id != null" >
+        model3_id,
+      </if>
+      <if test="model4Id != null" >
+        model4_id,
+      </if>
+      <if test="model5Id != null" >
+        model5_id,
+      </if>
+      <if test="model6Id != null" >
+        model6_id,
+      </if>
+      <if test="model8Id != null" >
+        model8_id,
+      </if>
+      <if test="model9Id != null" >
+        model9_id,
+      </if>
+      <if test="model10Id != null" >
+        model10_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="name2 != null" >
+        #{name2,jdbcType=VARCHAR},
+      </if>
+      <if test="name3 != null" >
+        #{name3,jdbcType=VARCHAR},
+      </if>
+      <if test="name4 != null" >
+        #{name4,jdbcType=VARCHAR},
+      </if>
+      <if test="name5 != null" >
+        #{name5,jdbcType=VARCHAR},
+      </if>
+      <if test="name6 != null" >
+        #{name6,jdbcType=VARCHAR},
+      </if>
+      <if test="name7 != null" >
+        #{name7,jdbcType=VARCHAR},
+      </if>
+      <if test="name8 != null" >
+        #{name8,jdbcType=VARCHAR},
+      </if>
+      <if test="name9 != null" >
+        #{name9,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name10 != null" >
+        #{name10,jdbcType=VARCHAR},
+      </if>
+      <if test="model1Id != null" >
+        #{model1Id,jdbcType=INTEGER},
+      </if>
+      <if test="model2Id != null" >
+        #{model2Id,jdbcType=INTEGER},
+      </if>
+      <if test="model3Id != null" >
+        #{model3Id,jdbcType=INTEGER},
+      </if>
+      <if test="model4Id != null" >
+        #{model4Id,jdbcType=INTEGER},
+      </if>
+      <if test="model5Id != null" >
+        #{model5Id,jdbcType=INTEGER},
+      </if>
+      <if test="model6Id != null" >
+        #{model6Id,jdbcType=INTEGER},
+      </if>
+      <if test="model8Id != null" >
+        #{model8Id,jdbcType=INTEGER},
+      </if>
+      <if test="model9Id != null" >
+        #{model9Id,jdbcType=INTEGER},
+      </if>
+      <if test="model10Id != null" >
+        #{model10Id,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wei.manager.bean.Model7" >
+    update model7
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="name2 != null" >
+        name2 = #{name2,jdbcType=VARCHAR},
+      </if>
+      <if test="name3 != null" >
+        name3 = #{name3,jdbcType=VARCHAR},
+      </if>
+      <if test="name4 != null" >
+        name4 = #{name4,jdbcType=VARCHAR},
+      </if>
+      <if test="name5 != null" >
+        name5 = #{name5,jdbcType=VARCHAR},
+      </if>
+      <if test="name6 != null" >
+        name6 = #{name6,jdbcType=VARCHAR},
+      </if>
+      <if test="name7 != null" >
+        name7 = #{name7,jdbcType=VARCHAR},
+      </if>
+      <if test="name8 != null" >
+        name8 = #{name8,jdbcType=VARCHAR},
+      </if>
+      <if test="name9 != null" >
+        name9 = #{name9,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name10 != null" >
+        name10 = #{name10,jdbcType=VARCHAR},
+      </if>
+      <if test="model1Id != null" >
+        model1_id = #{model1Id,jdbcType=INTEGER},
+      </if>
+      <if test="model2Id != null" >
+        model2_id = #{model2Id,jdbcType=INTEGER},
+      </if>
+      <if test="model3Id != null" >
+        model3_id = #{model3Id,jdbcType=INTEGER},
+      </if>
+      <if test="model4Id != null" >
+        model4_id = #{model4Id,jdbcType=INTEGER},
+      </if>
+      <if test="model5Id != null" >
+        model5_id = #{model5Id,jdbcType=INTEGER},
+      </if>
+      <if test="model6Id != null" >
+        model6_id = #{model6Id,jdbcType=INTEGER},
+      </if>
+      <if test="model8Id != null" >
+        model8_id = #{model8Id,jdbcType=INTEGER},
+      </if>
+      <if test="model9Id != null" >
+        model9_id = #{model9Id,jdbcType=INTEGER},
+      </if>
+      <if test="model10Id != null" >
+        model10_id = #{model10Id,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wei.manager.bean.Model7" >
+    update model7
+    set name = #{name,jdbcType=VARCHAR},
+      name2 = #{name2,jdbcType=VARCHAR},
+      name3 = #{name3,jdbcType=VARCHAR},
+      name4 = #{name4,jdbcType=VARCHAR},
+      name5 = #{name5,jdbcType=VARCHAR},
+      name6 = #{name6,jdbcType=VARCHAR},
+      name7 = #{name7,jdbcType=VARCHAR},
+      name8 = #{name8,jdbcType=VARCHAR},
+      name9 = #{name9,jdbcType=TIMESTAMP},
+      name10 = #{name10,jdbcType=VARCHAR},
+      model1_id = #{model1Id,jdbcType=INTEGER},
+      model2_id = #{model2Id,jdbcType=INTEGER},
+      model3_id = #{model3Id,jdbcType=INTEGER},
+      model4_id = #{model4Id,jdbcType=INTEGER},
+      model5_id = #{model5Id,jdbcType=INTEGER},
+      model6_id = #{model6Id,jdbcType=INTEGER},
+      model8_id = #{model8Id,jdbcType=INTEGER},
+      model9_id = #{model9Id,jdbcType=INTEGER},
+      model10_id = #{model10Id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

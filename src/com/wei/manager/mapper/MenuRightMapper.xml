@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wei.manager.mapper.MenuRightMapper" >
+  <resultMap id="BaseResultMap" type="com.wei.manager.bean.MenuRight" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="menu_id" property="menuId" jdbcType="BIGINT" />
+    <result column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="createdate" property="createdate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="menuResultMap" type="com.wei.manager.bean.Menu" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="createdate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="parent_id" property="parentId" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <!-- select m.*,r.role_id roleId from menu m left join menuright r on m.id = r.menu_id and r.role_id = '1' -->
+  <sql id="Base_Column_List" >
+    id, menu_id, role_id, createdate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from menuright
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <select id="selectRoleMenu" resultMap="menuResultMap" parameterType="string" >
+    select * from menu m where m.id in (select t.menu_id from menuright t where t.role_id = #{roleId,jdbcType=VARCHAR})
+  </select>
+  <select id="selectDistributeMenu" resultMap="menuResultMap" parameterType="string" >
+    select m.*,r.role_id roleId from menu m left join menuright r on m.id = r.menu_id and r.role_id = #{roleId,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectParentMenuByIds" resultMap="menuResultMap">  
+	select distinct parent_id from menu where id in  
+	<foreach item="item" index="index" collection="array" open="(" separator="," close=")">  
+		#{item}  
+	</foreach>  
+   </select>  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from menuright
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteRightByRoleId" parameterType="string" >
+    delete from menuright
+    where role_id = #{roleId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.wei.manager.bean.MenuRight" >
+    insert into menuright (id, menu_id, role_id, 
+      createdate)
+    values (#{id,jdbcType=BIGINT}, #{menuId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, 
+      #{createdate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wei.manager.bean.MenuRight" >
+    insert into menuright
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="menuId != null" >
+        menu_id,
+      </if>
+      <if test="roleId != null" >
+        role_id,
+      </if>
+      <if test="createdate != null" >
+        createdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="menuId != null" >
+        #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wei.manager.bean.MenuRight" >
+    update menuright
+    <set >
+      <if test="menuId != null" >
+        menu_id = #{menuId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="createdate != null" >
+        createdate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wei.manager.bean.MenuRight" >
+    update menuright
+    set menu_id = #{menuId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT},
+      createdate = #{createdate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

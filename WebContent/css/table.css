@@ -1,0 +1,278 @@
+/* body{
+	margin: 0;padding: 0;
+	background-color: whitesmoke;
+}
+div{margin: 0;padding: 0;}
+.top{
+	position: absolute;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 8%;
+	background-color: rgba(0,0,0,0.7);
+} */
+/* div{margin: 0;padding: 0;}
+.top .system_title{
+	border: 0px solid white;
+	width: 70%;
+	float: left;
+	height: 40px;
+	margin: 5px 10px 2px 20px;
+	font-size: 30px;
+	line-height:30px;
+	color: white;
+	font-family: microSoft Yahei;
+	overflow: hidden;
+	text-shadow: 2px 1px 1px #ccc;
+}
+.top .user_info{
+	width: 20%;
+	border: 0px solid white;
+	float: right;
+	height: 25px;
+	margin: 10px 20px 2px 20px;
+	text-align: right;
+	color: white;
+	font-family: microSoft Yahei;
+	font-size: 14px;
+	line-height:20px;
+	
+}
+.top .user_info a{
+	display: inline;
+	color: white;
+	text-decoration: none;
+}
+.top .user_info a:hover{
+	text-decoration: underline;
+} */
+/* .bottom{
+	position: absolute;
+	bottom: 0;
+	left:0;
+	width: 100%;
+	height: 4%;
+	background-color: rgba(0,0,0,0.9);
+	text-align: center;
+	color: white;
+	font-family: microSoft Yahei;
+	font-size: 14px;
+	line-height: 35px;
+}
+.left{
+	border-right: 1px solid gray;
+	position:absolute;
+	top: 8.5%;
+	left: 2px;
+	width: 15%; 
+	float: left;
+	height: 87%;
+	text-align: center;
+	padding-right: 2px;
+}
+.right{
+	border: 0px solid gray;
+	position:absolute;
+	top: 8.5%;
+	right: 2px;
+	width: 84.5%; 
+	float: right;
+	height: 87%;
+	overflow: auto;
+}*/
+#myframe{
+	width: 99.5%;
+	height: 99.5%;
+	border: 0px solid red;
+	margin: 0;
+	padding: 0;
+} 
+h3{
+	text-align: left;
+	overflow: hidden;
+	/* border: 0; */
+}
+p{
+	width:100%;
+	border: 0px solid red;
+	text-align: left;
+	margin: 0px 0px 6px 0px;
+}
+a[name='m']{
+	display:inline;
+	font-size: 14px;
+	font-family: microsoft yahei;
+	text-decoration: none;
+	word-spacing: 20px;
+	overflow: hidden;
+	color: #444;
+}
+a[name='m']:hover{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.page{
+	margin-top: 5px;
+	text-align: right;
+}
+.page_text{
+	font-family: microsoft yahei;
+}
+.button_normal{
+	border: 1px solid #666;
+	background-color: #d19405;
+	width: 70px;
+	height: 22px;
+	border-radius:2px;
+	font-family: microsoft yahei;
+	color:white;
+}
+.button_gray{
+	border: 1px solid #666;
+	background-color: #ccc;
+	width: 70px;
+	height: 22px;
+	border-radius:2px;
+	font-family: microsoft yahei;
+}
+.result{
+	border: 1px solid #ccc;
+	width:99.8%;
+	height: auto!important;
+	min-height:400px;
+	margin-top: 20px;
+	/* border-top: 3px solid #d19405; */
+	box-shadow:1px 1px 2px #ccc;
+}
+.result table{
+	border: 0px solid red;
+	width: 99.5%;
+	text-align: center;
+	margin-top: 10px;
+	margin-left:5px;
+	font-family: microsoft yahei;
+	font-size: 14px;
+	border-collapse: collapse;
+}
+.result table td{
+	border: 1px solid gray;
+}
+.result table thead{
+	background-color: #d19405;
+	color: white;
+	font-weight: bold;
+}
+.result table button{
+	background-color: #d19405;
+	color: white;
+	border: 1px solid #d19405;
+	border-radius:2px;
+}
+.result table tbody tr:nth-child(2n){
+	background-color: #e1e1e1;
+}
+.result table tbody tr:hover{
+	background-color: #ccc;
+}
+
+.query{
+	width:99.8%;
+	margin-top: 20px;
+	font-family: microsoft yahei;
+	border: 1px solid #ccc;
+	/* border-top:3px solid #d19405; */
+	padding-top:10px;
+	height: 50px;
+	box-shadow:1px 1px 2px #ccc;
+}
+.query input[type=text]{
+	width:220px;
+	height:23px;
+	border:1px solid gray;
+	border-radius: 2px;
+}
+.query input[type=submit]{
+	width:80px;
+	height:28px;
+	border:1px solid gray;
+	border-radius: 2px;
+	font-family: microsoft yahei;
+}
+
+.area{
+	border: 1px solid #ccc;
+	width: 50%;
+	border-radius: 5px;
+	height: auto!important;
+	min-height:250px; 
+	padding: 20px 0px 20px 0px;
+	box-shadow: 1px 1px 2px #e1e1e1;
+	margin-top: 50px;
+	/* border-top: 2px solid #d19405; */
+}
+.area legend{
+	border: 1px solid #1c77ac;
+	padding: 4px 25px 4px 25px;
+	border-radius:3px;
+	font-family: microsoft yahei;
+}
+.area table{
+	width:100%;
+	font-family: microsoft yahei;
+}
+.area table td{
+	padding-top: 3px;
+}
+.area select{
+	width: 222px;
+	height:30px;
+	border: 1px solid #ccc;
+	border-radius:3px;
+	font-size: 14px;
+}
+.area table input[type=text]{
+	width: 220px;
+	height:25px;
+	border: 1px solid #ccc;
+	border-radius:3px;
+	font-size: 14px;
+}
+.area table textarea{
+	width: 400px;
+	height:70px;
+	border: 1px solid #ccc;
+	border-radius:3px;
+	font-size: 14px;
+}
+.area .form_btn{
+	margin-top: 70px;
+	width:100px;
+	height:30px;
+	border: 1px solid #ccc;
+	border-radius:3px;
+	font-family: microsoft yahei;
+}
+
+.dialog_button{
+	position: fixed;
+	left:0;
+	bottom: 0;
+	width: 100%;
+	height:40px;
+	text-align: right;
+	border-top: 1px solid gray; 
+	background-color: #feeebd;
+}
+.dialog_button button{
+	margin-top: 6px;
+	width: 80px;
+	height:28px;
+	font-family: microsoft yahei;
+	border-radius: 3px;
+	border: 1px solid #999999;
+}
+.dialog_button button:last-child{
+	margin-right: 40px;
+	margin-left: 20px;
+}
